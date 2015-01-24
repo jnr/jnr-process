@@ -32,6 +32,10 @@ public class Process {
         this.err = new NativeDeviceChannel(NativeSelectorProvider.getInstance(), err, SelectionKey.OP_READ);
     }
 
+    public long getPid() {
+        return pid;
+    }
+
     public SelectableChannel getOut() {
         return out;
     }
