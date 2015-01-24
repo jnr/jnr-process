@@ -83,7 +83,7 @@ public class Process {
     }
 
     public int kill(int signal) {
-        return posix.kill(pid, signal);
+        return posix.kill((int)pid, signal);
     }
 
     public long exitValue() {
