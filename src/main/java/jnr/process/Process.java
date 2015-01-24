@@ -17,11 +17,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * Created by headius on 1/19/15.
  */
 public class Process {
+    public static final int SIGKILL = 9;
+
     private final long pid;
     private final POSIX posix;
     private final NativeDeviceChannel out; // stdin of child
     private final NativeDeviceChannel in; // stdout  of child
     private final NativeDeviceChannel err; // stderr of child
+
     long exitValue = -1;
 
     public Process(POSIX posix, long pid, int out, int in, int err) {
@@ -73,6 +76,14 @@ public class Process {
         exitValue = status[0];
 
         return exitValue;
+    }
+
+    public int kill() {
+        return kill(SIGKILL);
+    }
+
+    public int kill(int signal) {
+        return posix.kill(pid, signal);
     }
 
     public long exitValue() {
