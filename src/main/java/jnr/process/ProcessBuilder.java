@@ -12,6 +12,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import java.io.File;
+
 /**
  * Created by headius on 1/19/15.
  */
@@ -31,12 +33,23 @@ public class ProcessBuilder {
         return new ArrayList<String>(command);
     }
 
-    public void command(List<String> command) {
+    public ProcessBuilder command(List<String> command) {
         this.command = new ArrayList<String>(command);
+        return this;
     }
 
-    public void command(String... command) {
+    public ProcessBuilder command(String... command) {
         this.command = Arrays.asList(command);
+        return this;
+    }
+
+    public File directory() {
+        return new File(posix.getcwd());
+    }
+
+    public ProcessBuilder directory(String dir) {
+        posix.chdir(dir);
+        return this;
     }
 
     public Process start() {
