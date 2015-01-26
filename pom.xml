@@ -16,6 +16,11 @@
     </dependency>
     <dependency>
       <groupId>com.github.jnr</groupId>
+      <artifactId>jnr-constants</artifactId>
+      <version>0.8.6</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.jnr</groupId>
       <artifactId>jnr-posix</artifactId>
       <version>3.0.9</version>
     </dependency>
