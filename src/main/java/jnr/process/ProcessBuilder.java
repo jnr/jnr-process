@@ -31,12 +31,14 @@ public class ProcessBuilder {
         return new ArrayList<String>(command);
     }
 
-    public void command(List<String> command) {
+    public ProcessBuilder command(List<String> command) {
         this.command = new ArrayList<String>(command);
+        return this;
     }
 
-    public void command(String... command) {
+    public ProcessBuilder command(String... command) {
         this.command = Arrays.asList(command);
+        return this;
     }
 
     public Process start() {
