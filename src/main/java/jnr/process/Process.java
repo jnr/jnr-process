@@ -3,6 +3,7 @@ package jnr.process;
 import jnr.enxio.channels.NativeDeviceChannel;
 import jnr.enxio.channels.NativeSelectorProvider;
 import jnr.posix.POSIX;
+import jnr.constants.platform.Signal;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -69,6 +70,14 @@ public class Process {
         exitValue = status[0];
 
         return exitValue;
+    }
+
+    public int kill() {
+        return kill(Signal.SIGKILL);
+    }
+
+    public int kill(Signal sig) {
+        return posix.kill(pid, sig.intValue());
     }
 
     public long exitValue() {
