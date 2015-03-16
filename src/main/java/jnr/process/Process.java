@@ -84,6 +84,14 @@ public class Process {
         return posix.kill(pid, sig.intValue());
     }
 
+    public int killProcessGroup() {
+        return killProcessGroup(Signal.SIGKILL);
+    }
+
+    public int killProcessGroup(Signal sig) {
+        return posix.kill(-pid, sig.intValue());
+    }
+
     public long exitValue() {
         if (exitValue == -1) {
             throw new IllegalThreadStateException("subprocess has not yet completed");
