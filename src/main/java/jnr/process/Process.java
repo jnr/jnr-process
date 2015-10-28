@@ -81,7 +81,7 @@ public class Process {
     }
 
     public int kill(Signal sig) {
-        return posix.kill(pid, sig.intValue());
+        return posix.kill((int)pid, sig.intValue());
     }
 
     public int killProcessGroup() {
@@ -89,7 +89,7 @@ public class Process {
     }
 
     public int killProcessGroup(Signal sig) {
-        return posix.kill(-pid, sig.intValue());
+        return posix.kill(-(int)pid, sig.intValue());
     }
 
     public long exitValue() {
