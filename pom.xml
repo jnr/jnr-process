@@ -9,7 +9,7 @@
   <groupId>com.github.jnr</groupId>
   <artifactId>jnr-process</artifactId>
   <packaging>jar</packaging>
-  <version>0.2-SNAPSHOT</version>
+  <version>0.2</version>
   <url>http://maven.apache.org</url>
 
   <licenses>
@@ -37,17 +37,17 @@
     <dependency>
       <groupId>com.github.jnr</groupId>
       <artifactId>jnr-constants</artifactId>
-      <version>0.9.2</version>
+      <version>0.9.4</version>
     </dependency>
     <dependency>
       <groupId>com.github.jnr</groupId>
       <artifactId>jnr-posix</artifactId>
-      <version>3.0.29</version>
+      <version>3.0.30</version>
     </dependency>
     <dependency>
       <groupId>com.github.jnr</groupId>
       <artifactId>jnr-enxio</artifactId>
-      <version>0.12</version>
+      <version>0.13</version>
     </dependency>
   </dependencies>
 
