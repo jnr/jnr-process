@@ -5,6 +5,7 @@ import jnr.enxio.channels.NativeSelectorProvider;
 import jnr.posix.POSIX;
 import jnr.constants.platform.Signal;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.channels.Channels;
@@ -74,6 +75,17 @@ public class Process {
         exitValue = status[0];
 
         return exitValue;
+    }
+
+    /**
+     * Close file all channels and streams.
+     *
+     * @throws IOException
+     */
+    public void close() throws IOException {
+        err.close();
+        in.close();
+        out.close();
     }
 
     public int kill() {
