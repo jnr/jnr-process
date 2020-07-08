@@ -28,9 +28,9 @@ public class Process {
     public Process(POSIX posix, long pid, int out, int in, int err) {
         this.posix = posix;
         this.pid = pid;
-        this.out = new NativeDeviceChannel(NativeSelectorProvider.getInstance(), out, SelectionKey.OP_WRITE);
-        this.in = new NativeDeviceChannel(NativeSelectorProvider.getInstance(), in, SelectionKey.OP_READ);
-        this.err = new NativeDeviceChannel(NativeSelectorProvider.getInstance(), err, SelectionKey.OP_READ);
+        this.out = new NativeDeviceChannel(NativeSelectorProvider.getInstance(), out, SelectionKey.OP_WRITE, false);
+        this.in = new NativeDeviceChannel(NativeSelectorProvider.getInstance(), in, SelectionKey.OP_READ, false);
+        this.err = new NativeDeviceChannel(NativeSelectorProvider.getInstance(), err, SelectionKey.OP_READ, false);
     }
 
     public long getPid() {
