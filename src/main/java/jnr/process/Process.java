@@ -15,7 +15,10 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * Created by headius on 1/19/15.
+ * A {@link java.lang.Process} look-alike based on the Java Native Runtime's native FFI binding.
+ *
+ * Note this adds the {@link #getIn()}, {@link #getOut()}, and {@link #getErr()} methods for accessing selectable
+ * channels from the child process, as well as {@link #killProcessGroup()} to kill the child and descendants.
  */
 public class Process {
     private final long pid;
