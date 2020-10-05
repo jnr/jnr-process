@@ -11,7 +11,8 @@ import jnr.posix.POSIXFactory;
 import jnr.posix.SpawnFileAction;
 
 /**
- * Created by headius on 1/19/15.
+ * ProcessBuilder mimics the API of the JDK {@link java.lang.ProcessBuilder} class, providing methods to build up and
+ * launch a child process.
  */
 public class ProcessBuilder {
     private List<String> command;
@@ -19,24 +20,51 @@ public class ProcessBuilder {
     
     private static final POSIX posix = POSIXFactory.getPOSIX();
 
+    /**
+     * Create a new ProcessBuilder instance with the given command line.
+     *
+     * @param command the command line as a list of string arguments
+     */
     public ProcessBuilder(List<String> command) {
         this.command = new ArrayList<String>(command);
         this.env = new HashMap<String, String>(System.getenv());
     }
 
+    /**
+     * Create a new ProcessBuilder instance with the given command line.
+     *
+     * @param command the command line as a varargs array of string arguments
+     */
     public ProcessBuilder(String... command) {
     	this(Arrays.asList(command));
     }
 
+    /**
+     * Get a copy of the list of command line arguments that will be used to launch the child process.
+     *
+     * @return a copied list of command line arguments
+     */
     public List<String> command() {
         return new ArrayList<String>(command);
     }
 
+    /**
+     * Replace the command line with the given list of command line arguments.
+     *
+     * @param command the new list of command line arguments
+     * @return this ProcessBuilder instance
+     */
     public ProcessBuilder command(List<String> command) {
         this.command = new ArrayList<String>(command);
         return this;
     }
 
+    /**
+     * Replace the command line with the given varargs array of command line arguments.
+     *
+     * @param command the new array of command line arguments
+     * @return this ProcessBuilder instance
+     */
     public ProcessBuilder command(String... command) {
         this.command = Arrays.asList(command);
         return this;
@@ -56,6 +84,11 @@ public class ProcessBuilder {
     	return this.env;
     }
 
+    /**
+     * Launch the subprocess and return a new {@link Process} instance.
+     *
+     * @return a new Process wrapping the child process's pid and IO streams
+     */
     public Process start() {
         int[] stdin = new int[2];
         int[] stdout = new int[2];
