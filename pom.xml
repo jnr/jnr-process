@@ -10,7 +10,7 @@
   <artifactId>jnr-process</artifactId>
   <packaging>jar</packaging>
   <version>0.4-SNAPSHOT</version>
-  <url>http://maven.apache.org</url>
+  <url>https://github.com/jnr/jnr-process</url>
 
   <licenses>
     <license>
@@ -54,7 +54,7 @@
     <dependency>
       <groupId>com.github.jnr</groupId>
       <artifactId>jnr-enxio</artifactId>
-      <version>0.32.0</version>
+      <version>0.32.1</version>
     </dependency>
   </dependencies>
 
