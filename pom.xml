@@ -9,7 +9,7 @@
   <groupId>com.github.jnr</groupId>
   <artifactId>jnr-process</artifactId>
   <packaging>jar</packaging>
-  <version>0.4.11-SNAPSHOT</version>
+  <version>0.4.11</version>
   <url>https://github.com/jnr/jnr-process</url>
 
   <licenses>
@@ -48,13 +48,13 @@
     <dependency>
       <groupId>com.github.jnr</groupId>
       <artifactId>jnr-posix</artifactId>
-      <version>3.1.13</version>
+      <version>3.1.14</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.github.jnr</groupId>
       <artifactId>jnr-enxio</artifactId>
-      <version>0.32.12</version>
+      <version>0.32.13</version>
     </dependency>
   </dependencies>
 
