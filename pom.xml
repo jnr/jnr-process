@@ -4,6 +4,8 @@
   <artifactId>jnr-process</artifactId>
   <packaging>jar</packaging>
   <version>0.4.16</version>
+  <name>jnr-process</name>
+  <description>Native process management for JVM</description>
   <url>https://github.com/jnr/jnr-process</url>
 
   <licenses>
@@ -20,6 +22,14 @@
     <url>git@github.com:jnr/jnr-process.git</url>
     <tag>HEAD</tag>
   </scm>
+
+  <developers>
+    <developer>
+      <id>headius</id>
+      <name>Charles Oliver Nutter</name>
+      <email>headius@headius.com</email>
+    </developer>
+  </developers>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
